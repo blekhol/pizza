@@ -32,9 +32,14 @@ namespace ConsoleApp3
         public void f4()
         {
             var asd = lista.GroupBy(r => r.Pizza);
-            foreach (var rendelesek in  asd)
+            int max = 0;
+            Pizza maxPizza;
+            foreach (var rendelesek in asd)
             {
-                Console.WriteLine(rendelesek.Sum(r => r.Db));
+                if (rendelesek.Sum(r => r.Db) > max)
+                {
+                    max = rendelesek.Sum(r => r.Db);
+                }
             }
         }
     }
